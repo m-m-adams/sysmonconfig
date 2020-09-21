@@ -1,4 +1,4 @@
-<Sysmon schemaversion="3.30">
+<Sysmon schemaversion="4.40">
 
 <!-- This configuration file should suit many common deployment scenarios, and aims to achieve a happy medium of capturing most potentially malicious events, while still filtering some noise.
 
