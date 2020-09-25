@@ -141,11 +141,11 @@ A range of public Sysmon configurations have also been captured on this github p
     <SourceImage condition="end with">:\ngen.exe</SourceImage> <!-- creates many threads when .NET is updated -->
   </CreateRemoteThread>
   
-  <!-- Event is not working in testing on Sysmon 5.02, however this could be useful for capturing attempts to access NTDS.dit through raw disk access.
-  See https://clymb3r.wordpress.com/2013/06/13/using-powershell-to-copy-ntds-dit-registry-hives-bypass-sacls-dacls-file-locks/
+  <!-- Event is not working in testing on Sysmon 5.02, however this could be useful for capturing attempts to access NTDS.dit through raw disk access.-->
+
   <RawAccessRead onmatch="include">
   </RawAccessRead>
-  -->
+ 
   
   <!-- Capture process access. The filter restricts access to lsass and winlogon to catch credential dumping.
        Additionally, capture call traces that contain UNKNOWN, indicating code tied to a non-loaded moudule.
