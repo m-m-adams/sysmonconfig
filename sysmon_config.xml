@@ -1,4 +1,4 @@
-<Sysmon schemaversion="4.40">
+<Sysmon schemaversion="4.4">
 
 <!-- This configuration file should suit many common deployment scenarios, and aims to achieve a happy medium of capturing most potentially malicious events, while still filtering some noise.
 
@@ -25,7 +25,7 @@ A range of public Sysmon configurations have also been captured on this github p
  <!-- Certificate revocation checking is turned off given the increased network load but can be turned on by <CheckRevocation/> -->
  
  <EventFiltering>
- 
+ <RuleGroup name="" groupRelation="or">
   <!-- Capture all driver loads excluding Microsoft/Windows ones -->
   <DriverLoad onmatch="exclude">
    <Signature condition="contains">microsoft</Signature>
@@ -673,7 +673,7 @@ Sysmon's output paths are now 'friendly names' as of version 6. E.g. HKLM, and H
     <Image condition="contains">:\Windows\Microsoft.NET\</Image>
   </PipeEvent>
  
-<RuleGroup name="" groupRelation="or">
+
 <DnsQuery onmatch="exclude">
     <!-- Exclude browsers - since these are expected to make network connections and usually only proxy connections are captured -->
     <Image condition="end with">\Internet Explorer\iexplore.exe</Image>
